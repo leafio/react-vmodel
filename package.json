@@ -4,7 +4,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
+    "build": "vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },
@@ -13,16 +13,22 @@
   "files": [
     "./lib/*"
   ],
+  "types": "./lib/index.d.ts",
   "main": "./lib/index.umd.cjs",
   "module": "./lib/index.js",
   "exports": {
     ".": {
+      "types": "./lib/index.d.ts",
       "import": "./lib/index.js",
       "require": "./lib/index.umd.cjs"
     }
   },
-  "license":"MIT",
-  "keywords": ["v-model","vmodel","react"],
+  "license": "MIT",
+  "keywords": [
+    "v-model",
+    "vmodel",
+    "react"
+  ],
   "devDependencies": {
     "@rollup/plugin-typescript": "^11.1.5",
     "@types/node": "^20.8.6",
@@ -43,5 +49,8 @@
   },
   "peerDependencies": {
     "react": "^18.2.0"
+  },
+  "dependencies": {
+    "vite-plugin-dts": "^3.6.2"
   }
 }
